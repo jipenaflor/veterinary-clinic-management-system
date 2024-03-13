@@ -7,19 +7,11 @@
         public string Address { get; set; }
         public string ContactNumber { get; set; }
 
-        public ICollection<Animal> Pets { get; }
+        public ICollection<Pet> Pets { get; } = new List<Pet>();
 
-        public Owner(string name, string address, string contactNumber)
+        public void AddPets(Pet pet)
         {
-            Name = name;
-            Address = address;
-            ContactNumber = contactNumber;
-            Pets = new List<Animal>();
-        }
-
-        public void AddPets(Animal pet)
-        {
-            Pets.Add(pet); ;
+            Pets.Add(pet);
         }
     }
 }
