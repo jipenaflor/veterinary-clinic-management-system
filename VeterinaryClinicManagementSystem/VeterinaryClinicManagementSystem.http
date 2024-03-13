@@ -1,0 +1,6 @@
+@VeterinaryClinicManagementSystem_HostAddress = http://localhost:5171
+
+GET {{VeterinaryClinicManagementSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
