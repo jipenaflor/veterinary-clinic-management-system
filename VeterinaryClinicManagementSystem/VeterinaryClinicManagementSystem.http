@@ -14,35 +14,19 @@ Content-Type: application/json
   "species" : "Canine",
   "breed" : "JRT-Poodle",
   "sex" : "Female",
-  "birthdate" : "2020-06-26",
-  "owner": 
-    {
-      "id" : 1,
-      "name" : "Jerome Penaflor",
-      "address" : "General Trias, Cavite",
-      "contactNumber" : "09278792601"
-    }
+  "birthdate" : "2020-06-26"
 }
 
 ###
 
-POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets
+POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Owners
 Content-Type: application/json
 
 {
-  "id" : 2,
-  "name" : "Levi",
-  "species" : "Canine",
-  "breed" : "JRT-Poodle",
-  "sex" : "Male",
-  "birthdate" : "2020-06-26",
-  "owner": 
-    {
-      "id" : 1,
-      "name" : "Jerome Penaflor",
-      "address" : "General Trias, Cavite",
-      "contactNumber" : "09278792601"
-    }
+  "id" : 1,
+  "name" : "Jerome Penaflor",
+  "address" : "General Trias, Cavite",
+  "contactNumber" : "09278792601"
 }
 
 ###

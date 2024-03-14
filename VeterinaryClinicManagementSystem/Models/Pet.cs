@@ -13,9 +13,9 @@ namespace VeterinaryClinicManagementSystem.Models
 
         public Dictionary<string, DateOnly> Vaccinations { get; set; } = new Dictionary<string, DateOnly>();
 
-        public int OwnerId { get; set; }
+        public int? OwnerId { get; set; }
 
-        public Owner Owner { get; set; } = null!;
+        public Owner? Owner { get; set; }
 
         public ICollection<Veterinarian> Veterinarians { get; set; } = new List<Veterinarian>();
 

@@ -14,9 +14,13 @@ namespace VeterinaryClinicManagementSystem.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Pet>()
+                .HasOne(p => p.Owner)
+                .WithMany(p => p.Pets)
+                .HasForeignKey(p => p.OwnerId);
+
             modelBuilder.Entity<Pet>(b =>
-            {
-                b.Property(p => p.Name).IsRequired().HasMaxLength(128);
+            { 
                 b.Property(p => p.Vaccinations)
                     .HasConversion(
                         d => JsonConvert.SerializeObject(d, Formatting.None),
@@ -25,6 +29,7 @@ namespace VeterinaryClinicManagementSystem.Data
                     .HasMaxLength(4000);
             });
         }
+
         public DbSet<VeterinaryClinicManagementSystem.Models.Owner> Owner { get; set; } = default!;
         public DbSet<VeterinaryClinicManagementSystem.Models.Veterinarian> Veterinarian { get; set; } = default!;
     }
