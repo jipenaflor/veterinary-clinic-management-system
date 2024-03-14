@@ -55,8 +55,8 @@ namespace VeterinaryClinicManagementSystem.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Birthdate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("Birthdate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Breed")
                         .IsRequired()
@@ -64,7 +64,8 @@ namespace VeterinaryClinicManagementSystem.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)");
 
                     b.Property<int>("OwnerId")
                         .HasColumnType("integer");
@@ -76,6 +77,11 @@ namespace VeterinaryClinicManagementSystem.Migrations
                     b.Property<string>("Species")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("Vaccinations")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
 
                     b.HasKey("Id");
 

@@ -9,17 +9,17 @@ namespace VeterinaryClinicManagementSystem.Models
         public string Species { get; set; }
         public string Breed { get; set; }
         public string Sex { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateOnly Birthdate { get; set; }
 
-        public Dictionary<string, DateTime> Vaccinations { get; }
+        public Dictionary<string, DateOnly> Vaccinations { get; set; } = new Dictionary<string, DateOnly>();
 
         public int OwnerId { get; set; }
 
         public Owner Owner { get; set; } = null!;
 
-        public ICollection<Veterinarian> Veterinarians { get; } = new List<Veterinarian>();
+        public ICollection<Veterinarian> Veterinarians { get; set; } = new List<Veterinarian>();
 
-        public void AddVaccinations(string vaccine, DateTime dateAdministered)
+        public void AddVaccinations(string vaccine, DateOnly dateAdministered)
         {
             Vaccinations.Add(vaccine, dateAdministered);
         }

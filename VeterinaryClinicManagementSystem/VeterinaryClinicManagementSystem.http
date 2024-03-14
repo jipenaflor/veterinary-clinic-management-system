@@ -1,6 +1,48 @@
 @VeterinaryClinicManagementSystem_HostAddress = http://localhost:5171
 
-GET {{VeterinaryClinicManagementSystem_HostAddress}}/weatherforecast/
+GET {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets
 Accept: application/json
+
+###
+
+POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets
+Content-Type: application/json
+
+{
+  "id" : 1,
+  "name" : "Ellie",
+  "species" : "Canine",
+  "breed" : "JRT-Poodle",
+  "sex" : "Female",
+  "birthdate" : "2020-06-26",
+  "owner": 
+    {
+      "id" : 1,
+      "name" : "Jerome Penaflor",
+      "address" : "General Trias, Cavite",
+      "contactNumber" : "09278792601"
+    }
+}
+
+###
+
+POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets
+Content-Type: application/json
+
+{
+  "id" : 2,
+  "name" : "Levi",
+  "species" : "Canine",
+  "breed" : "JRT-Poodle",
+  "sex" : "Male",
+  "birthdate" : "2020-06-26",
+  "owner": 
+    {
+      "id" : 1,
+      "name" : "Jerome Penaflor",
+      "address" : "General Trias, Cavite",
+      "contactNumber" : "09278792601"
+    }
+}
 
 ###

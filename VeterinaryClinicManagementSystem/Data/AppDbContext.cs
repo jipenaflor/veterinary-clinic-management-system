@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using VeterinaryClinicManagementSystem.Models;
 
 namespace VeterinaryClinicManagementSystem.Data
@@ -7,6 +8,24 @@ namespace VeterinaryClinicManagementSystem.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Pet> Pets { get; set; } = null!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Pet>(b =>
+            {
+                b.Property(p => p.Name).IsRequired().HasMaxLength(128);
+                b.Property(p => p.Vaccinations)
+                    .HasConversion(
+                        d => JsonConvert.SerializeObject(d, Formatting.None),
+                        s => JsonConvert.DeserializeObject<Dictionary<string, DateOnly>>(s)
+                    )
+                    .HasMaxLength(4000);
+            });
+        }
+        public DbSet<VeterinaryClinicManagementSystem.Models.Owner> Owner { get; set; } = default!;
+        public DbSet<VeterinaryClinicManagementSystem.Models.Veterinarian> Veterinarian { get; set; } = default!;
     }
 }

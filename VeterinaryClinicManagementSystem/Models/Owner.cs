@@ -7,7 +7,7 @@
         public string Address { get; set; }
         public string ContactNumber { get; set; }
 
-        public ICollection<Pet> Pets { get; } = new List<Pet>();
+        public ICollection<Pet> Pets { get; set; } = new List<Pet>();
 
         public void AddPets(Pet pet)
         {
