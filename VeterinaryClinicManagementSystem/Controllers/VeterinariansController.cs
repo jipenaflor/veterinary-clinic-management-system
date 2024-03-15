@@ -25,14 +25,18 @@ namespace VeterinaryClinicManagementSystem.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Veterinarian>>> GetVeterinarian()
         {
-            return await _context.Veterinarian.ToListAsync();
+            return await _context.Veterinarians
+                .Include("Patients")
+                .ToListAsync();
         }
 
         // GET: api/Veterinarians/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Veterinarian>> GetVeterinarian(int id)
         {
-            var veterinarian = await _context.Veterinarian.FindAsync(id);
+            var veterinarian = await _context.Veterinarians
+                .Include("Patients")
+                .FirstOrDefaultAsync(v => v.Id == id);
 
             if (veterinarian == null)
             {
@@ -78,7 +82,7 @@ namespace VeterinaryClinicManagementSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<Veterinarian>> PostVeterinarian(Veterinarian veterinarian)
         {
-            _context.Veterinarian.Add(veterinarian);
+            _context.Veterinarians.Add(veterinarian);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetVeterinarian", new { id = veterinarian.Id }, veterinarian);
@@ -88,13 +92,13 @@ namespace VeterinaryClinicManagementSystem.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteVeterinarian(int id)
         {
-            var veterinarian = await _context.Veterinarian.FindAsync(id);
+            var veterinarian = await _context.Veterinarians.FindAsync(id);
             if (veterinarian == null)
             {
                 return NotFound();
             }
 
-            _context.Veterinarian.Remove(veterinarian);
+            _context.Veterinarians.Remove(veterinarian);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +106,7 @@ namespace VeterinaryClinicManagementSystem.Controllers
 
         private bool VeterinarianExists(int id)
         {
-            return _context.Veterinarian.Any(e => e.Id == id);
+            return _context.Veterinarians.Any(e => e.Id == id);
         }
     }
 }

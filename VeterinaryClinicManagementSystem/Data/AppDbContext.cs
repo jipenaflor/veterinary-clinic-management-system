@@ -8,7 +8,9 @@ namespace VeterinaryClinicManagementSystem.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<Pet> Pets { get; set; } = null!;
+        public DbSet<Pet> Pets { get; set; } = default!;
+        public DbSet<Owner> Owners { get; set; } = default!;
+        public DbSet<Veterinarian> Veterinarians { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,18 +21,11 @@ namespace VeterinaryClinicManagementSystem.Data
                 .WithMany(p => p.Pets)
                 .HasForeignKey(p => p.OwnerId);
 
-            modelBuilder.Entity<Pet>(b =>
-            { 
-                b.Property(p => p.Vaccinations)
-                    .HasConversion(
-                        d => JsonConvert.SerializeObject(d, Formatting.None),
-                        s => JsonConvert.DeserializeObject<Dictionary<string, DateOnly>>(s)
-                    )
-                    .HasMaxLength(4000);
-            });
-        }
+            modelBuilder.Entity<Pet>()
+                .HasOne(p => p.Veterinarian)
+                .WithMany(p => p.Patients)
+                .HasForeignKey(p => p.VeterinarianId);
 
-        public DbSet<VeterinaryClinicManagementSystem.Models.Owner> Owner { get; set; } = default!;
-        public DbSet<VeterinaryClinicManagementSystem.Models.Veterinarian> Veterinarian { get; set; } = default!;
+        }
     }
 }

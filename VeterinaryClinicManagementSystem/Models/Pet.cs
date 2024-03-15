@@ -1,32 +1,25 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace VeterinaryClinicManagementSystem.Models
 {
     public class Pet
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Species { get; set; }
-        public string Breed { get; set; }
-        public string Sex { get; set; }
+        public string Name { get; set; } = null!;
+        public string Species { get; set; } = null!;
+        public string? Breed { get; set; }
+        public string Sex { get; set; } = null!;
         public DateOnly Birthdate { get; set; }
-
-        public Dictionary<string, DateOnly> Vaccinations { get; set; } = new Dictionary<string, DateOnly>();
 
         public int? OwnerId { get; set; }
 
         public Owner? Owner { get; set; }
 
-        public ICollection<Veterinarian> Veterinarians { get; set; } = new List<Veterinarian>();
+        public int? VeterinarianId { get; set; }
 
-        public void AddVaccinations(string vaccine, DateOnly dateAdministered)
-        {
-            Vaccinations.Add(vaccine, dateAdministered);
-        }
+        public Veterinarian? Veterinarian { get; set; }
 
-        public void AddVeterinarians(Veterinarian veterinarian)
-        {
-            Veterinarians.Add(veterinarian);
-        }
     }
 }

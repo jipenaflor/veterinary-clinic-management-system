@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using VeterinaryClinicManagementSystem.Data;
@@ -11,9 +12,11 @@ using VeterinaryClinicManagementSystem.Data;
 namespace VeterinaryClinicManagementSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240315011031_FifthModification")]
+    partial class FifthModification
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,14 +79,14 @@ namespace VeterinaryClinicManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("VeterinarianId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Vaccinations")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OwnerId");
-
-                    b.HasIndex("VeterinarianId");
 
                     b.ToTable("Pets");
                 });
@@ -104,7 +107,12 @@ namespace VeterinaryClinicManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int?>("PetId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PetId");
 
                     b.ToTable("Veterinarians");
                 });
@@ -115,13 +123,14 @@ namespace VeterinaryClinicManagementSystem.Migrations
                         .WithMany("Pets")
                         .HasForeignKey("OwnerId");
 
-                    b.HasOne("VeterinaryClinicManagementSystem.Models.Veterinarian", "Veterinarian")
-                        .WithMany("Patients")
-                        .HasForeignKey("VeterinarianId");
-
                     b.Navigation("Owner");
+                });
 
-                    b.Navigation("Veterinarian");
+            modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Veterinarian", b =>
+                {
+                    b.HasOne("VeterinaryClinicManagementSystem.Models.Pet", null)
+                        .WithMany("Veterinarians")
+                        .HasForeignKey("PetId");
                 });
 
             modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Owner", b =>
@@ -129,9 +138,9 @@ namespace VeterinaryClinicManagementSystem.Migrations
                     b.Navigation("Pets");
                 });
 
-            modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Veterinarian", b =>
+            modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Pet", b =>
                 {
-                    b.Navigation("Patients");
+                    b.Navigation("Veterinarians");
                 });
 #pragma warning restore 612, 618
         }

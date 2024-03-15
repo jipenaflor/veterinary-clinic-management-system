@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using VeterinaryClinicManagementSystem.Data;
@@ -11,9 +12,11 @@ using VeterinaryClinicManagementSystem.Data;
 namespace VeterinaryClinicManagementSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240315120614_VetModification")]
+    partial class VetModification
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,6 +78,11 @@ namespace VeterinaryClinicManagementSystem.Migrations
                     b.Property<string>("Species")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("Vaccinations")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
 
                     b.Property<int?>("VeterinarianId")
                         .HasColumnType("integer");

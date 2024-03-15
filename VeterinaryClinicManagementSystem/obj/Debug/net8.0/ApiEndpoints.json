@@ -109,6 +109,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.OwnersController",
+    "Method": "AddPetsToOwner",
+    "RelativePath": "api/Owners/{OwnerId}/Pets/{PetId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "OwnerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VeterinaryClinicManagementSystem.Models.Owner",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
     "Method": "GetPets",
     "RelativePath": "api/Pets",
@@ -156,24 +187,8 @@
   },
   {
     "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
-    "Method": "DeletePet",
-    "RelativePath": "api/Pets",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
     "Method": "GetPet",
-    "RelativePath": "api/Pets/id",
+    "RelativePath": "api/Pets/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -181,7 +196,132 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VeterinaryClinicManagementSystem.Models.Pet",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
+    "Method": "PutPet",
+    "RelativePath": "api/Pets/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pet",
+        "Type": "VeterinaryClinicManagementSystem.Models.Pet",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
+    "Method": "DeletePet",
+    "RelativePath": "api/Pets/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
+    "Method": "GetVaccines",
+    "RelativePath": "api/Pets/{id}/Vaccinations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VeterinaryClinicManagementSystem.Models.Vaccine, VeterinaryClinicManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
+    "Method": "AddVaccinationsToPet",
+    "RelativePath": "api/Pets/{id}/Vaccinations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vaccine",
+        "Type": "VeterinaryClinicManagementSystem.Models.Vaccine",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VeterinaryClinicManagementSystem.Models.Pet",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VeterinaryClinicManagementSystem.Controllers.PetsController",
+    "Method": "AddVeterinarianToPet",
+    "RelativePath": "api/Pets/{PetId}/Veterinarians/{VetId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "VetId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

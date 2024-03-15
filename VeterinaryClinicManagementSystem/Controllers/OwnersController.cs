@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using VeterinaryClinicManagementSystem.Data;
 using VeterinaryClinicManagementSystem.Models;
 
@@ -25,14 +21,18 @@ namespace VeterinaryClinicManagementSystem.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Owner>>> GetOwner()
         {
-            return await _context.Owner.ToListAsync();
+            return await _context.Owners
+                .Include("Pets")
+                .ToListAsync();
         }
 
         // GET: api/Owners/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Owner>> GetOwner(int id)
         {
-            var owner = await _context.Owner.FindAsync(id);
+            var owner = await _context.Owners
+                .Include("Pets")
+                .FirstOrDefaultAsync(o => o.Id == id);
 
             if (owner == null)
             {
@@ -78,23 +78,49 @@ namespace VeterinaryClinicManagementSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<Owner>> PostOwner(Owner owner)
         {
-            _context.Owner.Add(owner);
+            _context.Owners.Add(owner);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetOwner", new { id = owner.Id }, owner);
+        }
+
+        [HttpPost("{OwnerId}/Pets/{PetId}")]
+        public async Task<ActionResult<Owner>> AddPetsToOwner(int OwnerId, int PetId)
+        {
+            var owner = await _context.Owners.FindAsync(OwnerId);
+            var pet = await _context.Pets.FindAsync(PetId);
+
+            if (owner == null || pet == null)
+            {
+                return NotFound();
+            }
+
+            if (pet.OwnerId != null)
+            {
+                var initialOwner = await _context.Veterinarians.FindAsync(pet.OwnerId);
+                initialOwner.RemovePatient(pet);
+            }
+
+            owner.AddPet(pet);
+            pet.Owner = owner;
+
+            await _context.SaveChangesAsync();
+         
+
+            return owner;
         }
 
         // DELETE: api/Owners/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOwner(int id)
         {
-            var owner = await _context.Owner.FindAsync(id);
+            var owner = await _context.Owners.FindAsync(id);
             if (owner == null)
             {
                 return NotFound();
             }
 
-            _context.Owner.Remove(owner);
+            _context.Owners.Remove(owner);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +128,7 @@ namespace VeterinaryClinicManagementSystem.Controllers
 
         private bool OwnerExists(int id)
         {
-            return _context.Owner.Any(e => e.Id == id);
+            return _context.Owners.Any(e => e.Id == id);
         }
     }
 }
