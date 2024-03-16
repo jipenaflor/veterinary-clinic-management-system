@@ -86,7 +86,7 @@ namespace VeterinaryClinicManagementSystem.Controllers
         }
 
         [HttpPost("{OwnerId}/Pets/{PetId}")]
-        public async Task<ActionResult<Owner>> AddPetsToOwner(int OwnerId, int PetId)
+        public async Task<ActionResult<Owner>> AddPetToOwner(int OwnerId, int PetId)
         {
             var owner = await _context.Owners.FindAsync(OwnerId);
             var pet = await _context.Pets.FindAsync(PetId);
@@ -122,6 +122,24 @@ namespace VeterinaryClinicManagementSystem.Controllers
             }
 
             _context.Owners.Remove(owner);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{OwnerId}/Pets/{PetId}")]
+        public async Task<IActionResult> RemovePetFromOwner(int OwnerId, int PetId)
+        {
+            var owner = await _context.Owners.FindAsync(OwnerId);
+            var pet = await _context.Pets.FindAsync(PetId);
+
+            if (owner == null || pet == null || pet.Owner == null)
+            {
+                return NotFound();
+            }
+
+            owner.Pets.Remove(owner.Pets.First(p => p.Id == PetId));
+
             await _context.SaveChangesAsync();
 
             return NoContent();

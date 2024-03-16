@@ -162,6 +162,43 @@ namespace VeterinaryClinicManagementSystem.Controllers
             return NoContent();
         }
 
+        [HttpDelete("{PetId}/Vaccines/{VaxId}")]
+        public async Task<IActionResult> RemoveVaccineFromPet(int PetId, int VaxId)
+        {
+            var pet = await _context.Pets.FindAsync(PetId);
+            var vaccine = await _context.Vaccines.FindAsync(VaxId);
+
+            if (pet == null || vaccine == null)
+            {
+                return NotFound();
+            }
+
+            pet.Vaccines.Remove(pet.Vaccines.First(v => v.Id == VaxId));
+            _context.Vaccines.Remove(vaccine);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{PetId}/Veterinarians/{VetId}")]
+        public async Task<IActionResult> RemoveVetFromPet(int PetId, int VetId)
+        {
+            var pet = await _context.Pets.FindAsync(PetId);
+            var vet = await _context.Veterinarians.FindAsync(VetId);
+
+            if (pet == null || vet == null || pet.Veterinarian == null)
+            {
+                return NotFound();
+            }
+
+            vet.Patients.Remove(vet.Patients.First(p => p.Id == VetId));
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         private bool PetExists(int id)
         {
             return _context.Pets.Any(e => e.Id == id);
