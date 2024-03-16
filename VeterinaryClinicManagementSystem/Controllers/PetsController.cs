@@ -26,8 +26,6 @@ namespace VeterinaryClinicManagementSystem.Controllers
         public async Task<ActionResult<IEnumerable<Pet>>> GetPets()
         {
             return await _context.Pets
-                .Include("Owner")
-                .Include("Veterinarian")
                 .ToListAsync();
         }
 
@@ -38,6 +36,7 @@ namespace VeterinaryClinicManagementSystem.Controllers
             var pet = await _context.Pets
                 .Include("Owner")
                 .Include("Veterinarian")
+                .Include("Vaccines")
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (pet == null)
@@ -89,6 +88,24 @@ namespace VeterinaryClinicManagementSystem.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPet", new { id = pet.Id }, pet);
+        }
+
+        [HttpPost("{id}/Vaccines")]
+        public async Task<ActionResult<Pet>> AddVaccineToPet(int id, Vaccine vaccine)
+        {
+            var pet = await _context.Pets.FindAsync(id);
+
+            if (pet == null)
+            {
+                return NotFound();
+            }
+
+            pet.Vaccines.Add(vaccine);
+            vaccine.Pet = pet;
+
+            await _context.SaveChangesAsync();
+
+            return pet;
         }
 
 

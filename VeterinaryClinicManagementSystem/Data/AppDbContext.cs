@@ -11,6 +11,7 @@ namespace VeterinaryClinicManagementSystem.Data
         public DbSet<Pet> Pets { get; set; } = default!;
         public DbSet<Owner> Owners { get; set; } = default!;
         public DbSet<Veterinarian> Veterinarians { get; set; } = default!;
+        public DbSet<Vaccine> Vaccines { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +27,10 @@ namespace VeterinaryClinicManagementSystem.Data
                 .WithMany(p => p.Patients)
                 .HasForeignKey(p => p.VeterinarianId);
 
+            modelBuilder.Entity<Pet>()
+                .HasMany(p => p.Vaccines)
+                .WithOne(p => p.Pet)
+                .HasForeignKey(p => p.PetId);
         }
     }
 }

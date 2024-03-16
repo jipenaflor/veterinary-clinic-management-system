@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\veterinaryclinicmanagementsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:veterinaryclinicmanagementsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\models\\vaccine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:models\\vaccine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,6 +13,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\controllers\\ownerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:controllers\\ownerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\veterinaryclinicmanagementsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:veterinaryclinicmanagementsystem.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\models\\vaccine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:models\\vaccine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B4A0BFD-705D-4DF6-879F-310B6BC61A5F}|VeterinaryClinicManagementSystem.csproj|c:\\users\\jerome penaflor\\source\\repos\\veterinary-clinic-management-system\\veterinaryclinicmanagementsystem\\models\\veterinarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,39 +58,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Vaccine.cs",
               "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Vaccine.cs",
               "RelativeDocumentMoniker": "Models\\Vaccine.cs",
-              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Vaccine.cs*",
-              "RelativeToolTip": "Models\\Vaccine.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Vaccine.cs",
+              "RelativeToolTip": "Models\\Vaccine.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T13:46:52.423Z",
+              "WhenOpened": "2024-03-16T01:12:33.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VeterinaryClinicManagementSystem.http",
-              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\VeterinaryClinicManagementSystem.http",
-              "RelativeDocumentMoniker": "VeterinaryClinicManagementSystem.http",
-              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\VeterinaryClinicManagementSystem.http*",
-              "RelativeToolTip": "VeterinaryClinicManagementSystem.http*",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA1wCQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-03-13T15:25:08.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PetsController.cs",
               "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\PetsController.cs",
               "RelativeDocumentMoniker": "Controllers\\PetsController.cs",
               "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\PetsController.cs",
               "RelativeToolTip": "Controllers\\PetsController.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAcwDcAAAAcAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAABsAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T12:03:37.046Z",
               "EditorCaption": ""
@@ -98,25 +85,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "VeterinariansController.cs",
-              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\VeterinariansController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VeterinariansController.cs",
-              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\VeterinariansController.cs",
-              "RelativeToolTip": "Controllers\\VeterinariansController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowDYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T02:52:05.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Pet.cs",
               "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Pet.cs",
               "RelativeDocumentMoniker": "Models\\Pet.cs",
               "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Pet.cs",
               "RelativeToolTip": "Models\\Pet.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAowA8AAAASAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwBcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T08:40:07.828Z",
               "EditorCaption": ""
@@ -124,27 +98,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAIwBoAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T01:45:46.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "OwnersController.cs",
               "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\OwnersController.cs",
               "RelativeDocumentMoniker": "Controllers\\OwnersController.cs",
               "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\OwnersController.cs",
               "RelativeToolTip": "Controllers\\OwnersController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAcwGQAAAAwAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAQwCcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T02:51:03.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VeterinaryClinicManagementSystem.http",
+              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\VeterinaryClinicManagementSystem.http",
+              "RelativeDocumentMoniker": "VeterinaryClinicManagementSystem.http",
+              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\VeterinaryClinicManagementSystem.http",
+              "RelativeToolTip": "VeterinaryClinicManagementSystem.http",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-03-13T15:25:08.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VeterinariansController.cs",
+              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\VeterinariansController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VeterinariansController.cs",
+              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Controllers\\VeterinariansController.cs",
+              "RelativeToolTip": "Controllers\\VeterinariansController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowDYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T02:52:05.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T01:45:46.96Z",
               "EditorCaption": ""
             },
             {
@@ -155,7 +155,7 @@
               "RelativeDocumentMoniker": "Models\\Veterinarian.cs",
               "ToolTip": "C:\\Users\\Jerome Penaflor\\source\\repos\\veterinary-clinic-management-system\\VeterinaryClinicManagementSystem\\Models\\Veterinarian.cs",
               "RelativeToolTip": "Models\\Veterinarian.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA9AAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T09:43:35.069Z",
               "EditorCaption": ""
@@ -170,8 +170,7 @@
               "RelativeToolTip": "Models\\Owner.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAA1wBAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T09:06:13.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T09:06:13.421Z"
             },
             {
               "$type": "Document",

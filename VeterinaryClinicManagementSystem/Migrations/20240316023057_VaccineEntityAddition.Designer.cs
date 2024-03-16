@@ -12,8 +12,8 @@ using VeterinaryClinicManagementSystem.Data;
 namespace VeterinaryClinicManagementSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240315141559_VaccineModelAddition")]
-    partial class VaccineModelAddition
+    [Migration("20240316023057_VaccineEntityAddition")]
+    partial class VaccineEntityAddition
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,6 +93,12 @@ namespace VeterinaryClinicManagementSystem.Migrations
 
             modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Vaccine", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
                     b.Property<DateOnly>("DateAdministered")
                         .HasColumnType("date");
 
@@ -100,7 +106,14 @@ namespace VeterinaryClinicManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.ToTable("Vaccine");
+                    b.Property<int>("PetId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PetId");
+
+                    b.ToTable("Vaccines");
                 });
 
             modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Veterinarian", b =>
@@ -139,9 +152,25 @@ namespace VeterinaryClinicManagementSystem.Migrations
                     b.Navigation("Veterinarian");
                 });
 
+            modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Vaccine", b =>
+                {
+                    b.HasOne("VeterinaryClinicManagementSystem.Models.Pet", "Pet")
+                        .WithMany("Vaccines")
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pet");
+                });
+
             modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Owner", b =>
                 {
                     b.Navigation("Pets");
+                });
+
+            modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Pet", b =>
+                {
+                    b.Navigation("Vaccines");
                 });
 
             modelBuilder.Entity("VeterinaryClinicManagementSystem.Models.Veterinarian", b =>

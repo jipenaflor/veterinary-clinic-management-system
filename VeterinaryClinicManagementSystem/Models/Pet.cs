@@ -21,5 +21,8 @@ namespace VeterinaryClinicManagementSystem.Models
 
         public Veterinarian? Veterinarian { get; set; }
 
+        [NotMapped]
+        public ICollection<Vaccine> Vaccines { get; set; } = new List<Vaccine>();
+
     }
 }

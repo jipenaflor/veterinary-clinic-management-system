@@ -5,7 +5,12 @@ Accept: application/json
 
 ###
 
-GET {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets/3
+GET {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets/1
+Accept: application/json
+
+###
+
+GET {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets/1/Vaccines
 Accept: application/json
 
 ###
@@ -32,12 +37,12 @@ Content-Type: application/json
 
 ###
 
-POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets/3/Vaccinations
+POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Pets/1/Vaccines
 Content-Type: application/json
 
 {
-  "name" : "8in1",
-  "dateAdministered" : "2021-03-02"
+  "name" : "8-in-1",
+  "dateAdministered" : "2021-03-20"
 }
 
 ###
@@ -63,7 +68,7 @@ Content-Type: application/json
 
 ###
 
-POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Owners/1/Pets/2
+POST {{VeterinaryClinicManagementSystem_HostAddress}}/api/Owners/1/Pets/1
 
 ###
 
